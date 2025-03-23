@@ -33,9 +33,11 @@ const initializeDatabase = () => __awaiter(void 0, void 0, void 0, function* () 
 });
 const configureMiddleware = () => {
     app.use((0, cors_1.default)({
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"],
+        origin: '*',
+        // origin: 'http://localhost:4200',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,
     }));
     app.use(express_1.default.json());
 };
